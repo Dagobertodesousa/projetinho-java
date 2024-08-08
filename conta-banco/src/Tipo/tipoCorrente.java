@@ -1,13 +1,13 @@
 package Tipo;
 import Pessoa.Titular;
 
-public abstract class Corrente extends Tipo{
+public abstract class tipoCorrente extends Tipo{
     private Titular titular;
     private int banco;
     private String agencia;
     private String conta;
 
-    public Corrente(Titular titular, int banco, String agencia, String conta) {
+    public tipoCorrente(Titular titular, int banco, String agencia, String conta) {
         this.setTitular(titular);
         this.setBanco(banco);
         this.setAgencia(agencia);

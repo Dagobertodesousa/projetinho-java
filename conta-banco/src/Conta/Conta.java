@@ -1,5 +1,5 @@
-package Banco;
-public class Conta{
+package Conta;
+public abstract class Conta{
     /**
      * Programinha tem por finalidade demonstrar a interação entre
      * contas bancárias
@@ -55,7 +55,7 @@ public class Conta{
         this.carteira = carteira;
     }
 
-    public String ImprimirSaldo(){
+    public String OperacaoImpressaoSaldo(){
         String bancoDescricao = "Conta Bancária: " + this.getConta();
         String agenciaDescricao = "\nConta Bancária: " + this.getAgencia();
         String tipoDescricao = "\nConta " + this.getTipo();
@@ -63,7 +63,7 @@ public class Conta{
         return bancoDescricao+agenciaDescricao+tipoDescricao+SaldoDescricao;
     }
 
-    public void Sacar(double saque){
+    public void OperacaoSaque(double saque){
         double novoSaldo = this.getSaldo() - saque;
         double novoCarteira = this.getCarteira() - saque;
         this.setCarteira(novoCarteira);
@@ -71,17 +71,26 @@ public class Conta{
         this.getSaldo();
     }
 
-    public void Transferir(Conta conta, double transferencia){
+    public void OperacaoTransferencia(Conta conta, double transferencia){
         double novaTransferencia = conta.getSaldo() - transferencia;
         conta.setSaldo(novaTransferencia);
     }
 
-    public void Depositar(Conta conta, double Deposito){
-        double novoDeposito = conta.getSaldo() + Deposito;
+    public void OperacaoDeposito(Conta conta, double deposito){
+        double novoDeposito = conta.getSaldo() + deposito;
         conta.setSaldo(novoDeposito);
     }
 
-    public void Investir(Conta conta, double valorInvestido){
+
+    public void OperacaoEmprestimo(double emprestimo){
+
+    }
+
+    public void OperacaoInvestimento(Conta conta, double valorInvestido){
         
+    }
+
+    public String OperacaoHistorico(String data){
+        return "";
     }
 }

@@ -1,13 +1,18 @@
 package Tipo;
 import Pessoa.Titular;
 
-public abstract class Estudante {
+public class tipoPoupanca extends Tipo{
     private Titular titular;
     private int banco;
     private String agencia;
     private String conta;
-    
 
+    public tipoPoupanca(Titular titular, int banco, String agencia, String conta) {
+        this.setTitular(titular);
+        this.setBanco(banco);
+        this.setAgencia(agencia);
+        this.setConta(conta);
+    }
     public Titular getTitular() {
         return titular;
     }
@@ -32,6 +37,5 @@ public abstract class Estudante {
     public void setConta(String conta) {
         this.conta = conta;
     }
-
     
 }

@@ -1,14 +1,15 @@
 package Banco;
 import Tipo.Tipo;
+import Conta.Conta;
 
 public abstract class Banco {
     private String razaoSocial;
     private int registroBanco;
     private String agencia;
-    private String conta;
+    private Conta conta;
     private Tipo tipo;
     
-    public Banco(String razaoSocial, int registroBanco, String agencia, String conta, Tipo tipo) {
+    public Banco(String razaoSocial, int registroBanco, String agencia, Conta conta, Tipo tipo) {
         this.setRazaoSocial(razaoSocial);
         this.setRegistroBanco(registroBanco);
         this.setAgencia(agencia);
@@ -33,10 +34,10 @@ public abstract class Banco {
     public void setAgencia(String agencia) {
         this.agencia = agencia;
     }
-    public String getConta() {
+    public Conta getConta() {
         return conta;
     }
-    public void setConta(String conta) {
+    public void setConta(Conta conta) {
         this.conta = conta;
     }
     public Tipo getTipo() {
@@ -44,6 +45,11 @@ public abstract class Banco {
     }
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
+    }
+    @Override
+    public String toString() {
+        return "Banco [razaoSocial=" + razaoSocial + ", registroBanco=" + registroBanco + ", agencia=" + agencia
+                + ", conta=" + conta + ", tipo=" + tipo + "]";
     }
 
     
